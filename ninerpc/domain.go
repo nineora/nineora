@@ -2,7 +2,7 @@ package ninerpc
 
 import (
 	"github.com/hootuu/gelato/errors"
-	"github.com/nineora/nineora"
+	"github.com/nineora/nineora/nineora"
 )
 
 type IDomain interface {

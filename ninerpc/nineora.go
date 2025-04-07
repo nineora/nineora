@@ -1,6 +1,6 @@
 package ninerpc
 
-import "github.com/nineora/nineora"
+import "github.com/nineora/nineora/nineora"
 
 const (
 	Nineora    = "nineora"
