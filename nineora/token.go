@@ -1,10 +1,22 @@
 package nineora
 
-type Token[T any] struct {
+type TokenID = NID
+type Token struct {
+	NID       TokenID  `json:"nid"`
+	NineoraID ID       `json:"nineora_id"`
+	DomainID  DomainID `json:"domain_id"`
+
+	Nineora Address `json:"nineora"`
+	Domain  Address `json:"domain"`
+
+	Chain     Chain     `json:"chain"`
 	Address   Address   `json:"address"`
 	Symbol    string    `json:"symbol"`
-	Domain    Address   `json:"domain"`
-	Committee Committee `json:"committee"`
-	Token     T         `json:"token"`
+	Owner     Address   `json:"owner"`
 	Ctrl      Ctrl      `json:"ctrl"`
+	Committee Committee `json:"committee"`
+}
+
+type TokenCore[T any] struct {
+	Token T `json:"token"`
 }

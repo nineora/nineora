@@ -1,10 +1,10 @@
 package nineora
 
-type Address string
+type Address = string
 
 type Ctrl uint64
 
-type Chain string
+type Chain = string
 
 const (
 	SOLANA Chain = "SOLANA"

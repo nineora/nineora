@@ -1,21 +1,25 @@
 package nineora
 
-type Network[T any] struct {
+type NetworkID = NID
+type Network struct {
+	NID       NetworkID `json:"nid"`
+	NineoraID ID        `json:"nineora_id"`
+	DomainID  DomainID  `json:"domain_id"`
+
+	Chain     Chain     `json:"chain"`
+	Nineora   Address   `json:"nineora"`
+	Domain    Address   `json:"domain"`
 	Address   Address   `json:"address"`
 	Symbol    string    `json:"symbol"`
-	Domain    Address   `json:"domain"`
 	Owner     Address   `json:"owner"`
-	Committee Committee `json:"committee"`
-	Network   T         `json:"network"`
 	Collar    Address   `json:"collar"`
+	Ctrl      Ctrl      `json:"ctrl"`
+	Committee Committee `json:"committee"`
+
+	NetworkType string                 `json:"network_type"`
+	Network     map[string]interface{} `json:"network"`
 }
 
-type Node[T any] struct {
-	Address  Address `json:"address"`
-	Network  Address `json:"network"`
-	Superior Address `json:"superior"`
-	Owner    Address `json:"owner"`
-	Benefit  Address `json:"benefit"`
-	Ctrl     Ctrl    `json:"ctrl"`
-	Node     T       `json:"node"`
+type NetworkCore[T any] struct {
+	Network T `json:"network"`
 }
