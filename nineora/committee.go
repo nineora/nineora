@@ -1,12 +1,12 @@
 package nineora
 
 type Member struct {
-	Weight     uint64
-	Role       uint64
-	JoinedTime uint64
-	Nine       bool
+	Weight     uint64 `json:"weight"`
+	Role       uint64 `json:"role"`
+	JoinedTime uint64 `json:"joined_time"`
+	Nine       bool   `json:"nine"`
 }
 
 type Committee struct {
-	Members map[Address]Member
+	Members map[Address]Member `json:"members,omitempty"`
 }

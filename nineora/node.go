@@ -2,17 +2,16 @@ package nineora
 
 type NodeID = NID
 type Node struct {
-	NID       NodeID    `json:"nid"`
-	NineoraID ID        `json:"nineora_id"`
-	DomainID  DomainID  `json:"domain_id"`
-	NetworkID NetworkID `json:"network_id"`
+	NID        NodeID    `json:"nid"`
+	NineoraID  ID        `json:"nineora_id"`
+	NetworkID  NetworkID `json:"network_id"`
+	SuperiorID NodeID    `json:"superior_id"`
 
+	Chain   Chain   `json:"chain"`
 	Nineora Address `json:"nineora"`
-	Domain  Address `json:"domain"`
+	Network Address `json:"network"`
 
-	Chain    Chain   `json:"chain"`
 	Address  Address `json:"address"`
-	Network  Address `json:"network"`
 	Superior Address `json:"superior"`
 	Owner    Address `json:"owner"`
 	Benefit  Address `json:"benefit"`
