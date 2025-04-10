@@ -19,6 +19,8 @@ type Node struct {
 
 	NodeType string                 `json:"node_type"`
 	Node     map[string]interface{} `json:"node"`
+
+	TimestampMsUTC int64 `json:"timestamp_ms_utc"`
 }
 
 type NodeCore[T any] struct {

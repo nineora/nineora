@@ -14,13 +14,17 @@ type Token struct {
 	Symbol    string    `json:"symbol"`
 	Owner     Address   `json:"owner"`
 	Ctrl      Ctrl      `json:"ctrl"`
+	Collar    Address   `json:"collar"`
 	Committee Committee `json:"committee"`
 
-	Supply uint64 `json:"supply"`
-	Limit  uint64 `json:"limit"`
+	Treasury Address `json:"treasury"`
+	Meta     Address `json:"meta"`
+	Supply   uint64  `json:"supply"`
+	Limit    uint64  `json:"limit"`
 
-	TokenType string                 `json:"token_type"`
-	Token     map[string]interface{} `json:"token"`
+	TokenType string `json:"token_type"`
+
+	TimestampMsUTC int64 `json:"timestamp_ms_utc"`
 }
 
 type TokenCore[T any] struct {

@@ -6,16 +6,25 @@ import (
 	"github.com/nineora/nineora/nineora"
 )
 
-type TokensReq struct {
-	Page pagination.Page `json:"page"`
+type TokenQueryReq struct {
+	Page *pagination.Page `json:"page"`
 }
 
-type NetworkTokensReq struct {
+type TokenQueryByNetworkReq struct {
 	NetworkID nineora.NetworkID `json:"network_id"`
 }
 
-type TokenService interface {
-	Tokens(req TokensReq) (pagination.Pagination[nineora.Token], *errors.Error)
-	NetworkTokens(req NetworkTokensReq) ([]*nineora.Token, *errors.Error)
-	Token(id nineora.TokenID) (*nineora.Token, *errors.Error)
+type TokenGetReq struct {
+	ID nineora.TokenID `json:"id"`
 }
+
+const (
+	TokenPath               = "token"
+	TokenQueryPath          = TokenPath + "/q"
+	TokenQueryByNetworkPath = TokenPath + "/q/by_network"
+	TokenGetPath            = TokenPath + "/get"
+)
+
+type TokenQuery func(req *TokenQueryReq) (*pagination.Pagination[nineora.Token], *errors.Error)
+type TokenQueryByNetwork func(req *TokenQueryByNetworkReq) ([]*nineora.Token, *errors.Error)
+type TokenGet func(req *TokenGetReq) (*nineora.Token, *errors.Error)

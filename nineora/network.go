@@ -16,4 +16,6 @@ type Network struct {
 	Committee Committee `json:"committee"`
 
 	Fee uint64 `json:"fee"`
+
+	TimestampMsUTC int64 `json:"timestamp_ms_utc"`
 }
