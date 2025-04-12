@@ -1,12 +1,18 @@
 package nineora
 
-type NodeID = NID
-type Node struct {
-	NID        NodeID    `json:"nid"`
-	NineoraID  ID        `json:"nineora_id"`
-	NetworkID  NetworkID `json:"network_id"`
-	SuperiorID NodeID    `json:"superior_id"`
+import (
+	"fmt"
+	"github.com/hootuu/gelato/crtpto/md5x"
+)
 
+type NodeID = NID
+
+func NewNodeID(chain Chain, addr Address) NodeID {
+	return md5x.MD5(fmt.Sprintf("[%s]%s", chain, addr))
+}
+
+type Node struct {
+	NID     NodeID  `json:"nid"`
 	Chain   Chain   `json:"chain"`
 	Nineora Address `json:"nineora"`
 	Network Address `json:"network"`

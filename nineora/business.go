@@ -1,6 +1,16 @@
 package nineora
 
+import (
+	"fmt"
+	"github.com/hootuu/gelato/crtpto/md5x"
+)
+
 type BusinessID = NID
+
+func NewBusinessID(chain Chain, addr Address) BusinessID {
+	return md5x.MD5(fmt.Sprintf("[%s]%s", chain, addr))
+}
+
 type Business struct {
 	NID       BusinessID `json:"nid"`
 	NineoraID ID         `json:"nineora_id"`
