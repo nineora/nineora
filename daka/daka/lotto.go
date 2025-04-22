@@ -10,6 +10,16 @@ const (
 
 type Round int
 
+func RoundALL() []Round {
+	return []Round{
+		RoundDay,
+		RoundWeek,
+		RoundMonth,
+		RoundQuarter,
+		RoundYear,
+	}
+}
+
 func (r Round) ToString() string {
 	switch r {
 	case RoundDay:

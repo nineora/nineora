@@ -6,6 +6,18 @@ import (
 	"github.com/nineora/nineora/nine/nineora"
 )
 
+const (
+	ReadPath         = "daka/read"
+	ProvinceGetPath  = ReadPath + "/province"
+	CityGetPath      = ReadPath + "/city"
+	ZoneGetPath      = ReadPath + "/zone"
+	BranchGetPath    = ReadPath + "/branch"
+	DivisionGetPath  = ReadPath + "/division"
+	AssociateGetPath = ReadPath + "/associate"
+	MerchantGetPath  = ReadPath + "/merchant"
+	MemberGetPath    = ReadPath + "/member"
+)
+
 type ProvinceGet func(link nineora.Link) (*daka.Province, *errors.Error)
 type CityGet func(link nineora.Link) (*daka.City, *errors.Error)
 type ZoneGet func(link nineora.Link) (*daka.Zone, *errors.Error)
