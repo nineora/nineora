@@ -7,27 +7,32 @@ import (
 	"strings"
 )
 
-type Address = string
-
 type Ctrl uint64
 
 func CtrlOfStr(str string) Ctrl {
 	return Ctrl(strs.ToUint64(str))
 }
 
-type Chain = string
-
-const (
-	SOLANA Chain = "SOLANA"
-	SUI    Chain = "SUI"
-)
-
-func SupportedChains() []Chain {
-	return []Chain{
-		SOLANA,
-		SUI,
-	}
-}
+//type Address = string
+//
+//type Chain = string
+//
+//const (
+//	SOLANA Chain = "SOLANA"
+//	SUI    Chain = "SUI"
+//)
+//
+//const (
+//	SuiCoin     = "SUI"
+//	SuiCoinType = "0x2::sui::SUI"
+//)
+//
+//func SupportedChains() []Chain {
+//	return []Chain{
+//		SOLANA,
+//		SUI,
+//	}
+//}
 
 type Amount struct {
 	Decimals uint8  `json:"decimals"`

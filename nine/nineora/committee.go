@@ -1,5 +1,7 @@
 package nineora
 
+import "github.com/nineora/nineora/nine/chain"
+
 type Member struct {
 	Weight     uint64 `json:"weight"`
 	Role       uint64 `json:"role"`
@@ -8,5 +10,5 @@ type Member struct {
 }
 
 type Committee struct {
-	Members map[Address]Member `json:"members,omitempty"`
+	Members map[chain.Address]Member `json:"members,omitempty"`
 }

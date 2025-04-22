@@ -3,7 +3,7 @@ package ninerpc
 import (
 	"github.com/hootuu/gelato/errors"
 	"github.com/hootuu/gelato/io/pagination"
-	"github.com/nineora/nineora/nineora"
+	"github.com/nineora/nineora/nine/nineora"
 )
 
 type TokenQueryReq struct {
@@ -12,10 +12,11 @@ type TokenQueryReq struct {
 
 type TokenQueryByNetworkReq struct {
 	NetworkID nineora.NetworkID `json:"network_id"`
+	Page      *pagination.Page  `json:"page"`
 }
 
 type TokenGetReq struct {
-	ID nineora.TokenID `json:"id"`
+	NID nineora.TokenID `json:"nid"`
 }
 
 const (
@@ -26,5 +27,5 @@ const (
 )
 
 type TokenQuery func(req *TokenQueryReq) (*pagination.Pagination[nineora.Token], *errors.Error)
-type TokenQueryByNetwork func(req *TokenQueryByNetworkReq) ([]*nineora.Token, *errors.Error)
+type TokenQueryByNetwork func(req *TokenQueryByNetworkReq) (*pagination.Pagination[nineora.Token], *errors.Error)
 type TokenGet func(req *TokenGetReq) (*nineora.Token, *errors.Error)

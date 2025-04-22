@@ -54,7 +54,7 @@ type Activity struct {
 	IniTime     uint64 `json:"ini_time"`
 }
 
-type Account struct {
+type LottoAccount struct {
 	InvestRatio uint64   `json:"invest_ratio"`
 	ProfitRatio uint64   `json:"profit_ratio"`
 	Day         Item     `json:"day"`

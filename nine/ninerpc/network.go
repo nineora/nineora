@@ -3,7 +3,7 @@ package ninerpc
 import (
 	"github.com/hootuu/gelato/errors"
 	"github.com/hootuu/gelato/io/pagination"
-	"github.com/nineora/nineora/nineora"
+	"github.com/nineora/nineora/nine/nineora"
 )
 
 type NetworkQueryReq struct {
@@ -11,7 +11,7 @@ type NetworkQueryReq struct {
 }
 
 type NetworkGetReq struct {
-	ID nineora.NetworkID `json:"id"`
+	NID nineora.NetworkID `json:"nid"`
 }
 
 const (

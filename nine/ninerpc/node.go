@@ -3,19 +3,23 @@ package ninerpc
 import (
 	"github.com/hootuu/gelato/errors"
 	"github.com/hootuu/gelato/io/pagination"
-	"github.com/nineora/nineora/nineora"
+	"github.com/nineora/nineora/nine/nineora"
 )
 
 type NodeQueryByNetworkReq struct {
 	NetworkID nineora.NetworkID `json:"network_id"`
 	Page      *pagination.Page  `json:"page"`
+	WithCore  bool              `json:"with_core"`
+	Deep      []uint32          `json:"deep"`
 }
 type NodeQueryBySuperiorReq struct {
 	Superior nineora.NodeID   `json:"superior"`
 	Page     *pagination.Page `json:"page"`
+	WithCore bool             `json:"with_core"`
+	Deep     []uint32         `json:"deep"`
 }
 type NodeGetReq struct {
-	ID nineora.NodeID `json:"id"`
+	NID nineora.NodeID `json:"nid"`
 }
 
 const (

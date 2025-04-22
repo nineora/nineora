@@ -4,26 +4,36 @@ type Unimkt struct {
 	Lotto Lotto `json:"lotto"`
 }
 
+type Province struct {
+	Area AreaAccount `json:"area"`
+}
+
+type City struct {
+	Area AreaAccount `json:"area"`
+}
+
 type Zone struct {
-	Account Account `json:"account"`
+	Area AreaAccount `json:"area"`
 }
 
 type Branch struct {
-	Account Account `json:"account"`
+	Community CommunityAccount `json:"community"`
 }
 
 type Division struct {
-	Account Account `json:"account"`
+	Community CommunityAccount `json:"community"`
 }
 
 type Associate struct {
-	Account Account `json:"account"`
+	Community CommunityAccount `json:"community"`
 }
 
 type Merchant struct {
-	Account Account `json:"account"`
+	Merchant MerchantAccount `json:"merchant"`
+	Lotto    LottoAccount    `json:"lotto"`
 }
 
 type Member struct {
-	Account Account `json:"account"`
+	Member MemberAccount `json:"member"`
+	Lotto  LottoAccount  `json:"lotto"`
 }
