@@ -66,6 +66,7 @@ type Bill struct {
 	Balance   uint64                 `json:"balance"`
 	Biz       string                 `json:"biz"`
 	Ctx       map[string]interface{} `json:"ctx"`
+	Memo      string                 `json:"memo"`
 }
 
 func (b *Bill) CtxX() objx.Map {
