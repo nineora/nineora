@@ -85,6 +85,26 @@ type ProvinceWithdrawReq struct {
 	Province nineora.Link `json:"province"`
 }
 
+type MemberSetMerchantReq struct {
+	Merchant nineora.Link `json:"merchant"`
+}
+
+type MerchantSetInvestReq struct {
+	InvestRatio uint64 `json:"invest_ratio"`
+}
+
+type MerchantSetAssociateReq struct {
+	Associate nineora.Link `json:"associate"`
+}
+
+type AssociateSetDivisionReq struct {
+	Division nineora.Link `json:"division"`
+}
+
+type DivisionSetBranchReq struct {
+	Branch nineora.Link `json:"branch"`
+}
+
 const (
 	UnimktPath            = "daka/unimkt"
 	ProvinceCreatePath    = UnimktPath + "/province/create"
