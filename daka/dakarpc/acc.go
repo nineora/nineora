@@ -31,4 +31,4 @@ type MerchantGet func(link nineora.Link) (*daka.Merchant, *errors.Error)
 
 type MemberGet func(link nineora.Link) (*daka.Member, *errors.Error)
 
-type LottoGet func() (*daka.LottoAccount, *errors.Error)
+type LottoGet func() (*daka.Lotto, *errors.Error)
