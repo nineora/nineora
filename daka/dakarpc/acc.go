@@ -16,6 +16,7 @@ const (
 	AssociateGetPath = ReadPath + "/associate"
 	MerchantGetPath  = ReadPath + "/merchant"
 	MemberGetPath    = ReadPath + "/member"
+	LottoGetPath     = ReadPath + "/lotto/info"
 )
 
 type ProvinceGet func(link nineora.Link) (*daka.Province, *errors.Error)
@@ -29,3 +30,5 @@ type AssociateGet func(link nineora.Link) (*daka.Associate, *errors.Error)
 type MerchantGet func(link nineora.Link) (*daka.Merchant, *errors.Error)
 
 type MemberGet func(link nineora.Link) (*daka.Member, *errors.Error)
+
+type LottoGet func() (*daka.LottoAccount, *errors.Error)
