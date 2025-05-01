@@ -72,3 +72,10 @@ type Bill struct {
 func (b *Bill) CtxX() objx.Map {
 	return objx.New(b.Ctx)
 }
+
+type Mnemonic struct {
+	Type       ninekey.Type `json:"type"`
+	PublicKey  []byte       `json:"public_key"`
+	Mnemonic   string       `json:"mnemonic"`
+	PrivateKey []byte       `json:"private_key"`
+}

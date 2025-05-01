@@ -16,8 +16,8 @@ type Mnemonic []byte
 
 type Key struct {
 	Type       Type       `json:"type"`
-	PrivateKey PrivateKey `json:"-"`
-	Mnemonic   Mnemonic   `json:"-"`
+	PrivateKey PrivateKey `json:"private_key"`
+	Mnemonic   Mnemonic   `json:"mnemonic"`
 	PublicKey  PublicKey  `json:"public_key"`
 }
 

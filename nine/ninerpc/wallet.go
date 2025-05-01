@@ -26,6 +26,11 @@ type AccQueryReq struct {
 	Page *pagination.Page `json:"page"`
 }
 
+type AccMnemonicReq struct {
+	Link     nineora.Link `json:"link"`
+	Password []byte       `json:"password"`
+}
+
 type BalQueryByAccReq struct {
 	AccountLink nineora.Link     `json:"account_link"`
 	Page        *pagination.Page `json:"page"`
@@ -49,6 +54,7 @@ const (
 	AccCreatePath      = WalletPath + "/acc/create"
 	AccQueryPath       = WalletPath + "/acc/q"
 	AccGetPath         = WalletPath + "/acc/g"
+	AccMnemonicPath    = WalletPath + "/acc/mnemonic"
 	BalQueryByAccPath  = WalletPath + "/bal/q/by_acc"
 	BillQueryByBalPath = WalletPath + "/bill/q/by_bal"
 )
@@ -60,3 +66,4 @@ type BalQueryByAcc func(req *BalQueryByAccReq) (*pagination.Pagination[nineora.B
 type BillQueryByBal func(req *BillQueryByBalReq) (*pagination.Pagination[nineora.Bill], *errors.Error)
 type WalletGet func(link nineora.Link) (*nineora.Wallet, *errors.Error)
 type AccGet func(link nineora.Link) (*nineora.Account, *errors.Error)
+type AccMnemonic func(req *AccMnemonicReq) (*nineora.Mnemonic, *errors.Error)

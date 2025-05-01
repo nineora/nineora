@@ -39,13 +39,19 @@ func (r Round) ToString() string {
 type Lotto struct {
 	EcologyRate uint64 `json:"ecology_rate"`
 	Day         Pool   `json:"day"`
+	DayNxt      Pool   `json:"day_nxt"`
 	Week        Pool   `json:"week"`
+	WeekNxt     Pool   `json:"week_nxt"`
 	Month       Pool   `json:"month"`
+	MonthNxt    Pool   `json:"month_nxt"`
 	Quarter     Pool   `json:"quarter"`
+	QuarterNxt  Pool   `json:"quarter_nxt"`
 	Year        Pool   `json:"year"`
+	YearNxt     Pool   `json:"year_nxt"`
 }
 
 type Pool struct {
+	Numb         uint64 `json:"numb"`
 	Score        uint64 `json:"score"`
 	Bonus        uint64 `json:"bonus"`
 	BonusBalance uint64 `json:"bonus_balance"`
