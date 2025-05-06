@@ -12,6 +12,7 @@ type LottoTriggerReq struct {
 	Member             nineora.Link `json:"member"`
 	Merchant           nineora.Link `json:"merchant"`
 	Zone               nineora.Link `json:"zone"`
+	PublicSrcMerchant  nineora.Link `json:"public_src_merchant"`
 }
 
 type LottoMemberClaimReq struct {
