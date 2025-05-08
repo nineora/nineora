@@ -90,7 +90,8 @@ type MemberSetMerchantReq struct {
 }
 
 type MerchantSetInvestReq struct {
-	InvestRatio uint64 `json:"invest_ratio"`
+	Merchant    nineora.Link `json:"merchant"`
+	InvestRatio uint64       `json:"invest_ratio"`
 }
 
 type MerchantSetAssociateReq struct {
