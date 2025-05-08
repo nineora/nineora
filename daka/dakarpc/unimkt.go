@@ -123,6 +123,7 @@ const (
 	MerchantWithdrawPath  = UnimktPath + "/merchant/withdraw"
 	MemberCreatePath      = UnimktPath + "/member/created"
 	MemberWithdrawPath    = UnimktPath + "/member/withdraw"
+	MerchantSetInvestPath = UnimktPath + "/merchant/set_invest"
 )
 
 type ProvinceCreate func(req *ProvinceCreateReq) (*chain.Tx, *errors.Error)
@@ -141,3 +142,4 @@ type ZoneWithdraw func(req *ZoneWithdrawReq) (*chain.Tx, *errors.Error)
 type BranchWithdraw func(req *BranchWithdrawReq) (*chain.Tx, *errors.Error)
 type DivisionWithdraw func(req *DivisionWithdrawReq) (*chain.Tx, *errors.Error)
 type AssociateWithdraw func(req *AssociateWithdrawReq) (*chain.Tx, *errors.Error)
+type MerchantSetInvest func(req *MerchantSetInvestReq) (*chain.Tx, *errors.Error)
